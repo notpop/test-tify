@@ -23,7 +23,7 @@
           <label for="email" class="">あなたのメールアドレス</label>
         </div>
 
-        <input type="email" aria-invalid="false" id="email" name="email" placeholder="メールアドレスを入力してください。" required="" value="{{ old('email') }}" class="text">
+        <input type="email" aria-invalid="false" id="email" name="email" placeholder="メールアドレスを入力してください。" required value="{{ old('email') }}" class="text">
       </div>
 
       <div class="div_subject">
@@ -31,7 +31,7 @@
           <label for="password" class="">パスワードを作成</label>
         </div>
 
-        <input type="password" aria-invalid="false" autocomplete="new-password" id="password" pattern="^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[!-/:-@[-`{-~])[!-~]{8,}$" name="password" placeholder="パスワードを作成。" required="" value="" class="text">
+        <input type="password" aria-invalid="false" autocomplete="new-password" id="password" pattern="^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[!-/:-@[-`{-~])[!-~]{8,}$" name="password" placeholder="パスワードを作成。" required class="text">
         <div class="subject_info">半角英小文字大文字数字記号をそれぞれ1種類以上含む8文字以上</div>
       </div>
 
@@ -40,7 +40,7 @@
           <label for="name" class="">表示名は何にしますか？</label>
         </div>
 
-        <input type="text" aria-invalid="true" id="name" name="name" placeholder="プロフィール名を入力します。" required="" value="{{ old('name') }}" class="text">
+        <input type="text" aria-invalid="true" id="name" name="name" placeholder="プロフィール名を入力します。" required value="{{ old('name') }}" class="text">
 
         <div class="subject_info">これはプロフィールに表示されます。</div>
       </div>

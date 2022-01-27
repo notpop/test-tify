@@ -15,10 +15,18 @@ class LoginController extends Controller
         $data = $request->validate([
             'email' => ['required', 'email:filter'],
             'password' => ['required', 'string'],
+            // 'remember_token' => ['string'],
         ]);
 
         if (Auth::attempt($data)) {
             $request->session()->regenerate();
+
+            // if (isset($data['remember_token']) && 'on' === $data['remember_token']) {
+            //     Auth::attempt($data, true);
+            // }
+            // else {
+            //     Auth::attempt($data, false);
+            // }
 
             return redirect('mypage');
         }

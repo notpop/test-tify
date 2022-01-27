@@ -12,23 +12,63 @@
   @include('block.header')
   @include('block.nav.error')
 
-  <div>
+  <div class="display">
     <form id="form" method="post">
       @csrf
 
-      <h1>Testify</h1>
+      <h2 class="title">Testify</h2>
 
-      <p>
-        {{-- <label for="email">Email</label> --}}
-        <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
-      </p>
-      <p>
-        {{-- <label for="password">Password</label> --}}
-        <input type="password" id="password" name="password" placeholder="Password">
-      </p>
+      <div class="container">
+        <div class="div_subject">
+          <div class="subject">
+            <label for="email">メールアドレス</label>
+          </div>
 
-      <button type="submit">Login</button>
+          <input id="email" type="text" name="email" class="text" placeholder="メールアドレス" required value="{{ old('email') }}">
+        </div>
+
+        <div class="div_subject">
+          <div class="subject">
+            <label for="password">パスワードを設定してください。</label>
+          </div>
+
+          <input id="password" type="password" name="password" class="text" placeholder="パスワードを設定してください。" required>
+        </div>
+
+        <a href="password/reset" id="reset-password-link" class="reset_link">パスワードをお忘れですか?</a>
+
+        <div class="div_login">
+          <div class="div_remeber">
+            <label for="remember_checkbox" class="remember_checkbox">
+              <input type="checkbox" id="remember_checkbox" name="remember_checkbox">
+              <span class="remember_checkbox_dummy"></span>
+              <span>
+                ログイン情報を記憶する
+              </span>
+            </label>
+          </div>
+
+          <div>
+            <div class="div_submit_button">
+              <button type="submit" id="submit" class="submit_button">
+                <div>ログイン</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </form>
+
+    <hr class="hr">
+
+    <div>
+      <form action="{{ route('register') }}" method="get">
+        <p class="not_account_p">アカウントをお持ちでない場合は</p>
+        <button type="submit" id="sign-up-link" class="register_button">
+          <p>Spotifyに登録する</p>
+        </button>
+      <form>
+    </div>
   </div>
 
 @endsection
