@@ -45,7 +45,7 @@
         <div class="subject_info">これはプロフィールに表示されます。</div>
       </div>
 
-      <div class="">
+      <div>
         <div class="div_subject">
           <label for="agree_checkbox" class="agree_checkbox">
             <input type="checkbox" id="agree_checkbox" name="agree_checkbox" required="">
@@ -55,16 +55,18 @@
               <a href="/agreement" target="_blank" rel="noopener noreferrer" class="url">Testifyの利用規約</a>に同意します。
             </span>
           </label>
+
+          <p id="agreeError" class="error_message default_display_none">利用規約に同意の上、チェックをつけてください。</p>
         </div>
 
         <div class="div_subject">
-          <div class="">
-            <button type="submit" class="">
+          <div class="submit">
+            <button type="button" class="submit_button" onclick="checkAgreeAndSubmit();">
               <div class="">登録する</div>
             </button>
           </div>
 
-          <p class="">
+          <p class="account_have">
             <span class="">アカウントをお持ちですか？<a href="{{ route('login') }}" class="url">ログイン</a>。</span>
           </p>
         </div>
@@ -75,5 +77,27 @@
 
 
 @section('script')
+  <script type="text/javascript">
+    function displayError() {
+      const agreeError = $('#agreeError');
+      agreeError.css('display', 'block');
+    }
 
+    function registerSubmit() {
+      const form = $('#form');
+      form.submit();
+    }
+
+    function checkAgreeAndSubmit() {
+      const checkbox = $('#agree_checkbox');
+      if (checkbox.is(':checked')) {
+        registerSubmit();
+      }
+      else {
+        displayError();
+
+        return false;
+      }
+    }
+  </script>
 @endsection

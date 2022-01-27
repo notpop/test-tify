@@ -65,6 +65,15 @@
   color: var(--text-subdued,#575757);
 }
 
+.div_subject > .submit {
+  height: 60px;
+  text-align: center;
+}
+
+.div_subject > .account_have {
+  text-align: center;
+}
+
 .agree_checkbox {
   display: flex;
   align-items: center;
@@ -117,4 +126,57 @@
 
 .url {
   color: rgb(29, 185, 84);
+}
+
+.submit_button {
+  position: relative;
+  background-color: var(--background-base,#1ed760);
+  color: var(--text-base,#000000);
+  border-radius: 500px;
+  font-size: inherit;
+  padding: 16px 48px;
+  font-weight: 700;
+  border: 0;
+
+  --background-base: #1ed760;
+  --background-highlight: #1fdf64;
+  --background-press: #169c46;
+  --background-elevated-base: #1ed760;
+  --background-elevated-highlight: #1ed760;
+  --background-elevated-press: #1ed760;
+  --background-tinted-base: #1ed760;
+  --background-tinted-highlight: #1ed760;
+  --background-tinted-press: #1ed760;
+  --background-unsafe-for-small-text-base: #1ed760;
+  --background-unsafe-for-small-text-highlight: #1ed760;
+  --background-unsafe-for-small-text-press: #1ed760;
+  --text-base: #000;
+  --text-subdued: #000;
+  --text-bright-accent: #000;
+  --text-negative: #000;
+  --text-warning: #000;
+  --text-positive: #000;
+  --text-announcement: #000;
+  --essential-base: #000;
+  --essential-subdued: #000;
+  --essential-bright-accent: #000;
+  --essential-negative: #000;
+  --essential-warning: #000;
+  --essential-positive: #000;
+  --essential-announcement: #000;
+  --decorative-base: #000;
+  --decorative-subdued: #1abc54;
+}
+
+.submit_button:hover {
+  padding: 17px 49px;
+  background-color: #48e980;
+}
+
+.error_message {
+  color: red;
+}
+
+.default_display_none {
+  display: none;
 }
