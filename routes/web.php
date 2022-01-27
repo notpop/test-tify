@@ -14,11 +14,4 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     Route::post('logout', [LoginController::class, 'logout'])->name('logout');
-
-    // Route::get('mypage', [MypageController::class, 'index'])->name('mypage');
-    // Route::get('mypage/posts/create', [MypageController::class, 'create'])->name('post.create');
-    // Route::post('mypage/posts/create', [MypageController::class, 'store']);
-    // Route::get('mypage/posts/{post}/edit', [MypageController::class, 'edit'])->name('post.edit.show');
-    // Route::post('mypage/posts/{post}/edit', [MypageController::class, 'update'])->name('post.update');
-    // Route::delete('mypage/posts/{post}/delete', [MypageController::class, 'destroy'])->name('post.delete');
 });

@@ -1,0 +1,95 @@
+.display {
+  max-width: 450px;
+  margin: 0px auto;
+  padding-bottom: 130px;
+}
+
+.display > form > .title {
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 0px 0px 1em;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.display > form > input:checked + label {
+  background-color: var(--essential-bright-accent,#169b45);
+  border-width: 0px;
+}
+
+.div_subject > input:checked {
+  background-color: var(--essential-bright-accent,#169b45);
+  border-width: 0px;
+}
+
+.div_subject {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  padding-bottom: 24px;
+}
+
+.div_subject > .subject {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  font-weight: 700;
+  width: 100%;
+  padding-bottom: 8px;
+}
+
+.div_subject > .text {
+  appearance: none;
+  background-image: none;
+  border: 0px;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 4px;
+  padding: 14px;
+  background-color: var(--background-base,#ffffff);
+  box-shadow: inset 0 0 0 1px var(--essential-subdued,#878787);
+  color: var(--text-base,#000000);
+}
+
+.div_subject > .subject_info {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  margin-top: 8px;
+  color: var(--text-subdued,#575757);
+}
+
+.agreement_check {
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  background: transparent;
+  border-radius: 3px;
+  display: inline-block;
+  height: 16px;
+  user-select: none;
+  width: 16px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  top: 4px;
+  position: relative;
+}
+
+
+input[type=checkbox]:checked,input[type=checkbox]:indeterminate,input[type=radio]:checked:before {
+  background: #169b45;
+}

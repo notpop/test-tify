@@ -12,15 +12,15 @@
   @include('block.header')
   @include('block.nav.error')
 
-  <div>
+  <div id="inputContainer">
     <form id="form" method="post">
       @csrf
 
-      <h1>Testify</h1>
+      <h1>Test-Tify</h1>
 
       <p>
         {{-- <label for="email">Email</label> --}}
-        <input type="email" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+        <input type="email" id="email" name="email" placeholder="Email">
       </p>
       <p>
         {{-- <label for="password">Password</label> --}}
