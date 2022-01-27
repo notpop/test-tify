@@ -31,7 +31,8 @@
           <label for="password" class="">パスワードを作成</label>
         </div>
 
-        <input type="password" aria-invalid="false" autocomplete="new-password" id="password" pattern=".{8,}" name="password" placeholder="パスワードを作成。" required="" value="" class="text">
+        <input type="password" aria-invalid="false" autocomplete="new-password" id="password" pattern="^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)(?=.*?[!-/:-@[-`{-~])[!-~]{8,}$" name="password" placeholder="パスワードを作成。" required="" value="" class="text">
+        <div class="subject_info">半角英小文字大文字数字記号をそれぞれ1種類以上含む8文字以上</div>
       </div>
 
       <div class="div_subject">
@@ -46,11 +47,12 @@
 
       <div class="">
         <div class="div_subject">
-          <input type="checkbox" id="agree-checkbox" name="agree-checkbox" required="" class="agreement_check">
-          <label for="agree-checkbox">
-            <span class="">
+          <label for="agree_checkbox" class="agree_checkbox">
+            <input type="checkbox" id="agree_checkbox" name="agree_checkbox" required="">
+            <span class="agree_checkbox_dummy"></span>
+            <span>
               {{-- route作ったら書き換える必要がある --}}
-              <a href="/agreement" target="_blank" rel="noopener noreferrer">Testifyの利用規約</a>に同意します。
+              <a href="/agreement" target="_blank" rel="noopener noreferrer" class="url">Testifyの利用規約</a>に同意します。
             </span>
           </label>
         </div>
@@ -63,7 +65,7 @@
           </div>
 
           <p class="">
-            <span class="">アカウントをお持ちですか？<a href="{{ route('login') }}">ログイン</a>。</span>
+            <span class="">アカウントをお持ちですか？<a href="{{ route('login') }}" class="url">ログイン</a>。</span>
           </p>
         </div>
       </div>

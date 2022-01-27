@@ -2,6 +2,7 @@
   max-width: 450px;
   margin: 0px auto;
   padding-bottom: 130px;
+  display: block;
 }
 
 .display > form > .title {
@@ -10,16 +11,6 @@
   padding: 0px 0px 1em;
   font-size: 30px;
   margin-bottom: 5px;
-}
-
-.display > form > input:checked + label {
-  background-color: var(--essential-bright-accent,#169b45);
-  border-width: 0px;
-}
-
-.div_subject > input:checked {
-  background-color: var(--essential-bright-accent,#169b45);
-  border-width: 0px;
 }
 
 .div_subject {
@@ -74,22 +65,56 @@
   color: var(--text-subdued,#575757);
 }
 
-.agreement_check {
-  box-sizing: border-box;
-  font-family: Helvetica, Arial, sans-serif;
-  background: transparent;
-  border-radius: 3px;
-  display: inline-block;
-  height: 16px;
-  user-select: none;
-  width: 16px;
-  flex-shrink: 0;
-  align-self: flex-start;
-  top: 4px;
+.agree_checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.agree_checkbox > input {
+  margin: 0;
+  width: 0;
+  opacity: 0;
+}
+.agree_checkbox > input:checked + .agree_checkbox_dummy {
+  background: #169b45;
+}
+.agree_checkbox > input:checked + .agree_checkbox_dummy::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 2px;
+  border-radius: 1px;
+  transform: translate(-3px, 2.5px) rotateZ(-130deg);
+  transform-origin: 1px 1px;
+  background: #FFFFFF;
+}
+.agree_checkbox > input:checked + .agree_checkbox_dummy::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76%;
+  height: 2px;
+  border-radius: 1px;
+  transform: translate(-3px, 2.5px) rotateZ(-44deg);
+  transform-origin: 1px 1px;
+  background: #FFFFFF;
+}
+.agree_checkbox_dummy {
   position: relative;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border: solid 1px transparent;
+  border-color: rgb(173, 171, 171);
+  border-radius: 4px;
+  margin-right: 6px;
+  margin-left: 3px;
 }
 
-
-input[type=checkbox]:checked,input[type=checkbox]:indeterminate,input[type=radio]:checked:before {
-  background: #169b45;
+.url {
+  color: rgb(29, 185, 84);
 }
